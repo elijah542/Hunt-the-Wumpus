@@ -1,4 +1,6 @@
 from cave import Cave
+from character import Enemy
+
 
 cavern = Cave("cavern")
 cavern.set_description("A damp and dirty cave.")
@@ -11,6 +13,11 @@ cavern.link_cave(dungeon, "south")
 grotto.link_cave(dungeon, "east")
 dungeon.link_cave(grotto, "west")
 dungeon.link_cave(cavern, "north")
+
+harry = Enemy("Harry", "A smelly Wumpus")
+harry.est_conversation("Hangry...Hanggrry")
+harry.set_weakness("vegemite")
+dungeon.set_character(harry)
 
 current_cave = cavern          
 while True:		
