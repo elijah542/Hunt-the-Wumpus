@@ -45,3 +45,19 @@ class Enemy(Character):
         else:
             print(self.name + " swallows you, little whimp")
             return False
+    
+    def items(self):
+        items = ["sword", "axe", "shoe", "stick", "nothing", "vegemite", "rock", "gold", "silver"]
+        return items
+        
+    def steal(self):
+        print("You steal from " + self.name)
+        print("you can steal " + ", ".join(self.items()))
+
+class Friend(Character):
+    def __init__(self, char_name, char_description):
+        super().__init__(char_name, char_description)
+        self.feeling = None
+    
+    def pat(self):
+        print(self.name + " pats you back")

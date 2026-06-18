@@ -5,9 +5,12 @@ class Cave:
         self.linked_caves = {}
         self.character = None
 
-    def get_description(self):
-        return self.description
-    
+    def set_character(self, new_character):
+        self.character = new_character
+
+    def get_character(self):
+        return self.character
+
     def set_name(self, cave_name):
         self.name = cave_name
 
@@ -16,6 +19,9 @@ class Cave:
     
     def set_description(self, cave_description):
         self.description = cave_description
+
+    def get_description(self):
+        return self.description
 
     def describe(self):
         print(self.description)
